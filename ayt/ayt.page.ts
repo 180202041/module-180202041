@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from 'src/app/user.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { firestore } from 'firebase/app';
+import { Http } from '@angular/http';
 
 
 @Component({
@@ -26,9 +29,12 @@ export class AytPage implements OnInit {
   alanDil;
   obp;
 
-  constructor() { }
+  constructor(public http: Http,
+              public afStore: AngularFirestore,
+              public service: UserService) { }
 
   aytHesap(){
+
     console.log('hesaplandı')
     var turkce = parseInt(this.turkce);
     var mat = parseInt(this.mat);
@@ -52,6 +58,31 @@ export class AytPage implements OnInit {
     var sozPuan = turkce*1.32+mat*1.32+sosyal*1.36+fen*1.36+alanEdeb*3+alanTar1*2.80+alanCog1*3.33+alanTar2*2.91+alanCog2*2.91+alanFels*3+alanDin*3.33+obp*0.6+100;
     var esitPuan = turkce*1.32+mat*1.32+sosyal*1.36+fen*1.36+alanMat*3+alanEdeb*3+alanTar1*2.8+alanCog1*3.33+obp*0.6+100;
     var dilPuan = turkce*1.32+mat*1.32+sosyal*1.36+fen*1.36+alanDil*3+obp*0.6+100;
+
+    var sayPuans = sayPuan,
+        toString = sayPuans.toString(),
+        toConcat = sayPuans + "";
+    var sozPuans = sozPuan,
+        toString = sozPuans.toString(),
+        toConcat = sozPuans + "";
+    var esitPuans = esitPuan,
+        toString = esitPuans.toString(),
+        toConcat = esitPuans + "";
+    var dilPuans = dilPuan,
+        toString = dilPuans.toString(),
+        toConcat = dilPuans + "";
+
+    this.afStore.doc(`users/${this.service.getUID()}`).update({
+      posts: firestore.FieldValue.arrayUnion({
+        sayPuans,
+        sozPuans,
+        esitPuans,
+        dilPuans
+      })
+    })
+
+
+
 
     alert ('SAYISAL AYT PUANI : '+sayPuan )
     alert ('SÖZEL AYT PUANI : '+sozPuan )
