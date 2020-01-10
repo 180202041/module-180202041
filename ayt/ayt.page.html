@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ayt</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="floating">Türkçe Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="turkce"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Matematik Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="mat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Sosyal Bilimler Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="sosyal"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Fen Bilimleri Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="fen"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Matematik Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanMat"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Fizik Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanFizik"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Kimya Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanKimya"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Biyoloji Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanBiyo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Edebiyat Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanEdeb"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Tarih-1 Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanTar1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Coğrafya-1 Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanCog1"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Tarih-2 Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanTar2"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Coğrafya-2 Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanCog2"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Felsefe Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanFels"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Din Kültürü Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanDin"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Alan-Dil Net Sayınızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="alanDil"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Lise Bitirme Ortalamanızı Giriniz</ion-label>
+    <ion-input type="number" [(ngModel)]="obp"></ion-input>
+  </ion-item>
+
+  <ion-button fill="solid" expand="block" color="dark" (click)="aytHesap()"> PUAN HESAPLA</ion-button>
+
+</ion-content>
